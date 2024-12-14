@@ -8,13 +8,20 @@ function contar(){
     var fimValue = fim.value;
     var passoValue = passo.value;
 
-    while( inicioValue == "" || fimValue == "" || passoValue == ""){
+       while( inicioValue == "" || fimValue == "" || passoValue == "" || inicioValue >= fimValue){
         window.alert('Error');
-        res.innerHTML = "ERROR";
-        return;
     }
 
-    window.alert("OK");
-
+    res.innerHTML = "Resultado: ";
+    if(inicioValue <= fimValue){
+        for(var i = inicioValue; inicioValue <= fimValue; i+= passoValue){
+            res.innerHTML += `${i}`;
+           }
+    }else{
+        for(var i = inicioValue; inicioValue >= fimValue; i-= passoValue){
+            res.innerHTML += `${i}`;
+        }
+    }
+   
   
 }
